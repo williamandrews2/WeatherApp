@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: sans-serif;
+  color: white;
+  --sunny-background: linear-gradient(
+    to bottom,
+    rgb(1, 141, 255),
+    rgb(0, 204, 255)
+  );
+}
+
+html {
+}
+
+.main-container {
+  background: var(--sunny-background);
+  min-height: 100vh;
+}
+
+.today-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+  width: 60%;
+  height: 400px;
+}
+
+.today-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

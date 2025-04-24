@@ -5,20 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="./images/weather-icon.png" />
     <link rel="stylesheet" href="styles.css" />
-    <title>Weather</title>
+    <title>Weatherly</title>
   </head>
   <body>
-    <form>
-      <label for="searchbox">
-        <input
-          type="text"
-          id="searchbox"
-          required
-          minlength="2"
-          maxlength="50"
-        />
-      </label>
-      <input type="submit" value="Search" />
-    </form>
+    <div class="main-container">
+      <form>
+        <label for="searchbox">
+          <input
+            type="text"
+            id="searchbox"
+            required
+            minlength="2"
+            maxlength="50"
+          />
+        </label>
+        <input type="submit" value="Search" />
+      </form>
+      <!--Weather content will be dynamically injected here-->
+    </div>
   </body>
 </html>
