@@ -36,3 +36,8 @@ html {
   justify-content: center;
   align-items: center;
 }
+
+.future-item img {
+  height: 30px;
+  width: auto;
+}

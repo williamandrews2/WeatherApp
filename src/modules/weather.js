@@ -32,9 +32,6 @@ async function getWeather(city) {
     const weatherData = await response.json();
     getTodaysWeather(weatherData);
     getFutureWeather(weatherData);
-    // console.log(futureWeather);
-    // console.log(todaysWeather);
-    // console.log(weatherData);
   } catch (e) {
     console.log(
       `Error retrieving weather data for the city of ${city}. ERROR: ${e}`
@@ -47,11 +44,11 @@ function getTodaysWeather(data) {
   todaysWeather = new WeatherData(
     data.resolvedAddress,
     data.days[0].datetime,
-    data.currentConditions.temp,
+    Math.round(data.currentConditions.temp),
     data.currentConditions.conditions,
     data.currentConditions.icon,
-    data.days[0].tempmax,
-    data.days[0].tempmin,
+    Math.round(data.days[0].tempmax),
+    Math.round(data.days[0].tempmin),
     data.description
   );
 }
@@ -62,15 +59,15 @@ function getFutureWeather(data) {
     let futureWeatherObj = new WeatherData(
       data.resolvedAddress,
       data.days[i].datetime,
-      data.days[i].temp,
+      Math.round(data.days[i].temp),
       data.days[i].conditions,
       data.days[i].icon,
-      data.days[i].tempmax,
-      data.days[i].tempmin,
+      Math.round(data.days[i].tempmax),
+      Math.round(data.days[i].tempmin),
       data.days[i].description
     );
     futureWeather.push(futureWeatherObj);
   }
 }
 
-export { getWeather, todaysWeather, futureWeather };
+export { getWeather, todaysWeather, futureWeather, days };
