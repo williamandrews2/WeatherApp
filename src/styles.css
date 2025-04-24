@@ -29,6 +29,7 @@ html {
   gap: 10px;
   width: 60%;
   height: 400px;
+  background: rgba(0, 0, 0, 0.15);
 }
 
 .today-item {

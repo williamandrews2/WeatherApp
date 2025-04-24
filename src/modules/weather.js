@@ -34,8 +34,10 @@ async function getWeather(city) {
     const weatherData = await response.json();
     getTodaysWeather(weatherData);
     getFutureWeather(weatherData);
+    console.log(weatherData);
     ui.renderWeather(); // render as soon as the API call is complete.
   } catch (e) {
+    alert(`No result found for "${city}`);
     console.log(
       `Error retrieving weather data for the city of ${city}. ERROR: ${e}`
     );
@@ -45,7 +47,7 @@ async function getWeather(city) {
 function getTodaysWeather(data) {
   // setting today's weather for testing
   todaysWeather = new WeatherData(
-    data.resolvedAddress,
+    parseCity(data.resolvedAddress),
     data.days[0].datetime,
     Math.round(data.currentConditions.temp),
     data.currentConditions.conditions,
@@ -60,7 +62,7 @@ function getFutureWeather(data) {
   futureWeather = []; // reset array completely
   for (let i = 1; i <= days; i++) {
     let futureWeatherObj = new WeatherData(
-      data.resolvedAddress,
+      parseCity(data.resolvedAddress),
       data.days[i].datetime,
       Math.round(data.days[i].temp),
       data.days[i].conditions,
@@ -71,6 +73,14 @@ function getFutureWeather(data) {
     );
     futureWeather.push(futureWeatherObj);
   }
+}
+
+function parseCity(data) {
+  const parts = data.split(",");
+  const city = parts[0].trim();
+  const state = parts[1].trim();
+  const cityState = `${city}, ${state}`;
+  return cityState;
 }
 
 export { getWeather, todaysWeather, futureWeather, days };

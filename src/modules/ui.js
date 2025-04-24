@@ -6,9 +6,10 @@ const weatherIcons = require.context(
   false,
   /\.(png|jpe?g|svg)$/
 );
-const mainContainer = document.querySelector(".main-container");
+const weatherContainer = document.querySelector(".weather-container");
 
 function renderWeather() {
+  weatherContainer.innerHTML = "";
   renderTodaysWeather();
   renderFutureWeather();
 }
@@ -17,25 +18,25 @@ function renderTodaysWeather() {
   const todaySection = document.createElement("div");
   todaySection.className = "today-section";
 
-  const city = document.createElement("div");
+  const city = document.createElement("h2");
   city.className = "today-item today-top-left";
   city.textContent = todaysWeather.city;
 
-  const condition = document.createElement("div");
+  const condition = document.createElement("h2");
   condition.className = "today-item today-top-right";
   condition.textContent = todaysWeather.condition;
 
-  const temp = document.createElement("div");
+  const temp = document.createElement("h2");
   temp.className = "today-item today-bottom-left";
   temp.textContent = todaysWeather.temperature;
 
-  const tempRange = document.createElement("div");
+  const tempRange = document.createElement("h2");
   tempRange.className = "today-item today-bottom-right";
   tempRange.textContent = `High: ${todaysWeather.tempMax} Low: ${todaysWeather.tempMin}`;
 
   todaySection.append(city, condition, temp, tempRange);
 
-  mainContainer.appendChild(todaySection);
+  weatherContainer.appendChild(todaySection);
 }
 
 function renderFutureWeather() {
@@ -64,7 +65,7 @@ function renderFutureWeather() {
     futureSection.appendChild(futureItem);
   });
 
-  mainContainer.appendChild(futureSection);
+  weatherContainer.appendChild(futureSection);
 }
 
 // helper function to "import" icons due to Webpack
