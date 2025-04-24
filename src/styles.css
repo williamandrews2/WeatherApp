@@ -13,9 +13,9 @@
     rgb(0, 204, 255)
   );
   --background-shade: rgba(0, 0, 0, 0.15);
-}
-
-html {
+  --universal-width: 60%;
+  --section-margin: 20px 0px;
+  --section-border-radius: 40px;
 }
 
 button,
@@ -64,14 +64,23 @@ button,
   padding: 0px 10px;
   font-size: 30px;
 }
+
+.weather-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .today-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  margin: var(--section-margin);
   grid-template-rows: 1fr 1fr;
   gap: 10px;
-  width: 60%;
+  width: var(--universal-width);
   height: 400px;
   background: var(--background-shade);
+  border-radius: var(--section-border-radius);
 }
 
 .today-item {
@@ -80,6 +89,15 @@ button,
   align-items: center;
 }
 
+.future-section {
+  display: flex;
+  justify-content: space-around;
+  width: var(--universal-width);
+  margin: var(--section-margin);
+  background: var(--background-shade);
+  border-radius: var(--section-border-radius);
+  padding: 30px;
+}
 .future-item img {
   height: 30px;
   width: auto;
