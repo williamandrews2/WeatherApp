@@ -1,3 +1,5 @@
+import ui from "./ui";
+
 let todaysWeather; // testing variable
 let days = 5; // amount of days to get the future weather for (between 0 and 14)
 let futureWeather = [];
@@ -32,6 +34,7 @@ async function getWeather(city) {
     const weatherData = await response.json();
     getTodaysWeather(weatherData);
     getFutureWeather(weatherData);
+    ui.renderWeather(); // render as soon as the API call is complete.
   } catch (e) {
     console.log(
       `Error retrieving weather data for the city of ${city}. ERROR: ${e}`
