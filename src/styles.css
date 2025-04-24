@@ -12,16 +12,58 @@
     rgb(1, 141, 255),
     rgb(0, 204, 255)
   );
+  --background-shade: rgba(0, 0, 0, 0.15);
 }
 
 html {
 }
 
+button,
+#submit-button {
+  cursor: pointer;
+}
+
 .main-container {
   background: var(--sunny-background);
   min-height: 100vh;
+  text-align: center;
 }
 
+#searchbar-form {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0px;
+}
+
+.form-wrapper {
+  background: var(--background-shade);
+  border-radius: 40px;
+}
+
+#searchbox,
+#submit-button {
+  background: rgba(0, 0, 0, 0);
+  border-radius: 40px;
+  color: white;
+  border: none;
+  height: 40px;
+}
+
+#searchbox {
+  width: 40vw;
+  padding-left: 10px;
+  font-size: 1rem;
+}
+
+#searchbox:focus {
+  outline: none;
+  border: 1px solid white;
+}
+
+#submit-button {
+  padding: 0px 10px;
+  font-size: 30px;
+}
 .today-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -29,7 +71,7 @@ html {
   gap: 10px;
   width: 60%;
   height: 400px;
-  background: rgba(0, 0, 0, 0.15);
+  background: var(--background-shade);
 }
 
 .today-item {

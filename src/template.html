@@ -9,17 +9,19 @@
   </head>
   <body>
     <div class="main-container">
-      <form>
-        <label for="searchbox">
-          <input
-            type="text"
-            id="searchbox"
-            required
-            minlength="2"
-            maxlength="50"
-          />
-        </label>
-        <input type="submit" value="Search" />
+      <form id="searchbar-form">
+        <div class="form-wrapper">
+          <label for="searchbox">
+            <input
+              type="text"
+              id="searchbox"
+              required
+              minlength="2"
+              maxlength="50"
+            />
+          </label>
+          <input type="submit" value="⌕" id="submit-button" />
+        </div>
       </form>
       <div class="weather-container">
         <!--Weather content will be dynamically injected here-->
