@@ -25,29 +25,34 @@ function renderTodaysWeather() {
   const todaySection = document.createElement("div");
   todaySection.className = "today-section";
 
-  const imgContainer = document.createElement("div");
-  imgContainer.className = "today-item today-top-left";
+  const todayLeft = document.createElement("div");
+  todayLeft.className = "today-item today-left";
   const img = document.createElement("img");
   img.src = getIconPath(todaysWeather.icon);
-  imgContainer.appendChild(img);
-
   const condition = document.createElement("h2");
   condition.className = "today-item today-bottom-left";
   condition.textContent = todaysWeather.condition;
 
+  todayLeft.append(img, condition);
+
+  const todayRight = document.createElement("div");
+  todayRight.className = "today-item today-right";
+
   const temp = document.createElement("h2");
-  temp.className = "today-item today-top-right";
+  temp.className = "today-item today-temp";
   temp.textContent = `${todaysWeather.temperature}°`;
 
   const tempRange = document.createElement("div");
-  tempRange.className = "today-item today-bottom-right";
+  tempRange.className = "today-item today-range";
   const feelsLike = document.createElement("h2");
   feelsLike.textContent = `Feels like: ${todaysWeather.feelsLike}°`;
   const range = document.createElement("h2");
   range.textContent = `High: ${todaysWeather.tempMax}° Low: ${todaysWeather.tempMin}°`;
   tempRange.append(feelsLike, range);
 
-  todaySection.append(imgContainer, temp, condition, tempRange);
+  todayRight.append(temp, tempRange);
+
+  todaySection.append(todayLeft, todayRight);
 
   mainSectionContainer.appendChild(todayHeading);
   mainSectionContainer.appendChild(todaySection);

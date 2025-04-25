@@ -93,9 +93,9 @@ button,
 .today-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr;
   gap: 10px;
-  height: 400px;
+  height: auto;
   width: 100%;
 }
 
@@ -105,21 +105,23 @@ button,
   align-items: center;
 }
 
-.today-item.today-top-left {
+.today-item.today-left,
+.today-item.today-right {
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
-.today-item.today-top-left img {
+.today-item.today-left img {
   max-width: 70%;
   max-height: 70%;
 }
 
-.today-item.today-top-right {
+.today-item.today-temp {
   font-size: 900%;
 }
 
-.today-item.today-bottom-right {
+.today-item.today-range {
   flex-direction: column;
 }
 
