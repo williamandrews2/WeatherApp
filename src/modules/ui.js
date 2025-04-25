@@ -58,7 +58,7 @@ function renderFutureWeather() {
   const mainSectionContainer = document.createElement("div");
   mainSectionContainer.className = "main-section-container";
 
-  const futureHeading = document.createElement("h3");
+  const futureHeading = document.createElement("h2");
   futureHeading.className = "section-heading";
   futureHeading.textContent = `${days}-day Forecast`;
 
@@ -82,7 +82,7 @@ function renderFutureWeather() {
     temps.className = "future-temps";
     temps.textContent = `H: ${day.tempMax}° L: ${day.tempMin}°`;
 
-    futureItem.append(img, date, temps);
+    futureItem.append(date, img, temps);
 
     futureSection.appendChild(futureItem);
   });
