@@ -12,7 +12,7 @@
     rgb(1, 141, 255),
     rgb(0, 204, 255)
   );
-  --background-shade: rgba(0, 0, 0, 0.15);
+  --background-shade: rgba(0, 0, 0, 0.2);
   --universal-width: 60%;
   --section-margin: 20px 0px;
   --section-border-radius: 40px;
@@ -38,11 +38,13 @@ button,
 .form-wrapper {
   background: var(--background-shade);
   border-radius: 40px;
+  display: flex;
+  align-items: center;
 }
 
 #searchbox,
 #submit-button {
-  background: rgba(0, 0, 0, 0);
+  background: transparent;
   border-radius: 40px;
   color: white;
   border: none;
