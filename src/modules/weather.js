@@ -9,6 +9,7 @@ class WeatherData {
     city,
     date,
     temperature,
+    feelsLike,
     condition,
     icon,
     tempMax,
@@ -18,6 +19,7 @@ class WeatherData {
     this.city = city;
     this.date = date;
     this.temperature = temperature;
+    this.feelsLike = feelsLike;
     this.condition = condition;
     this.icon = icon;
     this.tempMax = tempMax;
@@ -50,6 +52,7 @@ function getTodaysWeather(data) {
     parseCity(data.resolvedAddress),
     data.days[0].datetime,
     Math.round(data.currentConditions.temp),
+    Math.round(data.currentConditions.feelslike),
     data.currentConditions.conditions,
     data.currentConditions.icon,
     Math.round(data.days[0].tempmax),
@@ -65,6 +68,7 @@ function getFutureWeather(data) {
       parseCity(data.resolvedAddress),
       data.days[i].datetime,
       Math.round(data.days[i].temp),
+      Math.round(data.currentConditions.feelslike),
       data.days[i].conditions,
       data.days[i].icon,
       Math.round(data.days[i].tempmax),
