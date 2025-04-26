@@ -8,7 +8,17 @@ const city = document.getElementById("searchbox");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   city.blur();
+  localStorage.setItem("city", city.value);
   getWeather(city.value);
 });
 
-window.onload = getWeather("San Francisco");
+function loadRecentCity() {
+  const recentCity = localStorage.getItem("city");
+  if (recentCity) {
+    getWeather(recentCity);
+  } else {
+    getWeather("San Francisco");
+  }
+}
+
+window.onload = loadRecentCity;
