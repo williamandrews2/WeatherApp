@@ -36,6 +36,7 @@ async function getWeather(city) {
     const weatherData = await response.json();
     getTodaysWeather(weatherData);
     getFutureWeather(weatherData);
+    console.log(weatherData);
     ui.renderWeather(); // render as soon as the API call is complete.
   } catch (e) {
     alert(`No result found for "${city}`);

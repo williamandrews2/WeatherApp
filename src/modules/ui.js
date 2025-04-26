@@ -1,4 +1,6 @@
 import { todaysWeather, futureWeather, days } from "./weather";
+import moon from "../images/moon.svg";
+import sun from "../images/sun.svg";
 
 // this creates a context of all images in the folder
 const weatherIcons = require.context(
@@ -6,7 +8,13 @@ const weatherIcons = require.context(
   false,
   /\.(png|jpe?g|svg)$/
 );
+
 const weatherContainer = document.querySelector(".weather-container");
+const themeIcon = document.getElementById("theme-icon");
+const toggleButton = document.getElementById("theme-toggle");
+toggleButton.addEventListener("click", toggleTheme);
+
+let isDay = true;
 
 function renderWeather() {
   weatherContainer.innerHTML = "";
@@ -109,6 +117,13 @@ function getIconPath(iconName) {
 function getDayOfWeek(dateString) {
   const date = new Date(dateString);
   return date.toLocaleDateString("en-US", { weekday: "long" });
+}
+
+function toggleTheme() {
+  const root = document.documentElement;
+  root.classList.toggle("dark");
+  isDay = !isDay;
+  themeIcon.src = isDay ? sun : moon;
 }
 
 export default { renderWeather };

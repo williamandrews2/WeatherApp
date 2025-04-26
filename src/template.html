@@ -8,7 +8,8 @@
     <title>Weatherly</title>
   </head>
   <body>
-    <div class="main-container">
+    <header>
+      <h1 id="page-name">Weatherly</h1>
       <form id="searchbar-form">
         <div class="form-wrapper">
           <label for="searchbox">
@@ -18,14 +19,19 @@
               required
               minlength="2"
               maxlength="50"
+              placeholder="Search for a city..."
+              ;
             />
           </label>
           <input type="submit" value="⌕" id="submit-button" />
         </div>
       </form>
-      <div class="weather-container">
-        <!--Weather content will be dynamically injected here-->
-      </div>
+      <button id="theme-toggle">
+        <img src="./images/sun.svg" id="theme-icon" alt="toggle theme" />
+      </button>
+    </header>
+    <div class="weather-container">
+      <!--Weather content will be dynamically injected here-->
     </div>
   </body>
 </html>

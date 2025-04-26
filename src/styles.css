@@ -4,13 +4,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-weight: 100;
+  font-weight: 300;
 }
 
 :root {
   font-family: "Open Sans", sans-serif;
   color: white;
-  --sunny-background: linear-gradient(
+  --background-color: linear-gradient(
     to bottom,
     rgb(1, 141, 255),
     rgb(0, 204, 255)
@@ -21,21 +21,52 @@
   --section-border-radius: 40px;
 }
 
+input:-webkit-autofill {
+  background-color: transparent !important;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+  -webkit-text-fill-color: white !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input::placeholder {
+  color: rgb(177, 177, 177);
+  opacity: 1;
+  font-style: italic;
+}
+
+body {
+  background: var(--background-color);
+  min-height: 100vh;
+}
+
+.dark {
+  --background-color: linear-gradient(
+    to bottom,
+    rgb(0, 0, 156),
+    rgb(1, 58, 145)
+  );
+}
+
 button,
 #submit-button {
   cursor: pointer;
 }
 
-.main-container {
-  background: var(--sunny-background);
-  min-height: 100vh;
-  text-align: center;
+#page-name {
+  padding: 16px 0px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 30px;
 }
 
 #searchbar-form {
   display: flex;
   justify-content: center;
-  padding: 10px 0px;
+  padding: 20px 0px;
 }
 
 .form-wrapper {
@@ -70,6 +101,17 @@ button,
   font-size: 30px;
 }
 
+#theme-toggle {
+  border: none;
+  height: 40px;
+  background: transparent;
+}
+
+#theme-icon {
+  max-width: 40px;
+  max-height: 40px;
+}
+
 .main-section-container {
   display: flex;
   flex-direction: column;
@@ -97,6 +139,7 @@ button,
   gap: 10px;
   height: auto;
   width: 100%;
+  padding-bottom: 20px;
 }
 
 .today-item {
