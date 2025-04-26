@@ -37,11 +37,12 @@ function renderTodaysWeather() {
   todayLeft.className = "today-item today-left";
   const img = document.createElement("img");
   img.src = getIconPath(todaysWeather.icon);
-  const condition = document.createElement("h2");
-  condition.className = "today-item today-bottom-left";
-  condition.textContent = todaysWeather.condition;
 
-  todayLeft.append(img, condition);
+  const desc = document.createElement("h2");
+  desc.className = "today-item today-description";
+  desc.textContent = todaysWeather.description;
+
+  todayLeft.append(img, desc);
 
   const todayRight = document.createElement("div");
   todayRight.className = "today-item today-right";
@@ -49,6 +50,10 @@ function renderTodaysWeather() {
   const temp = document.createElement("h2");
   temp.className = "today-item today-temp";
   temp.textContent = `${todaysWeather.temperature}°`;
+
+  const condition = document.createElement("h2");
+  condition.className = "today-item today-condition";
+  condition.textContent = todaysWeather.condition;
 
   const tempRange = document.createElement("div");
   tempRange.className = "today-item today-range";
@@ -58,7 +63,7 @@ function renderTodaysWeather() {
   range.textContent = `High: ${todaysWeather.tempMax}° Low: ${todaysWeather.tempMin}°`;
   tempRange.append(feelsLike, range);
 
-  todayRight.append(temp, tempRange);
+  todayRight.append(temp, condition, tempRange);
 
   todaySection.append(todayLeft, todayRight);
 
