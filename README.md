@@ -2,7 +2,7 @@
 
 [Weatherly](https://williamandrews2.github.io/WeatherApp/) is a sleek, responsive weather application built with vanilla JavaScript, HTML, and CSS—modularized through Webpack. This project is part of [The Odin Project](https://www.theodinproject.com/lessons/node-path-javascript-weather-app) curriculum and demonstrates real-world JavaScript practices such as working with APIs, modular code architecture, form handling, and UI design.
 
-The app provides real-time weather updates with a clean UI and smooth UX, including theming, city search functionality, and mobile responsiveness. A live preview can be found [here](https://williamandrews2.github.io/WeatherApp/).
+The app provides real-time weather updates from the [Visual Crossing API](https://www.visualcrossing.com/) with a clean UI and smooth UX, including theming, city search functionality, and mobile responsiveness. A live preview can be found [here](https://williamandrews2.github.io/WeatherApp/).
 
 ## ✨ Features
 - 🔍 City Search — Search for a city to view its current weather and upcoming forecast.
