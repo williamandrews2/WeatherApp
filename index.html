@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="22ce0ffb6af6f5f3c368.png" />
+    <link rel="stylesheet" href="84bb4fc080631c2605f1.css" />
+    <title>Weatherly</title>
+  <script defer src="main.js"></script></head>
+  <body>
+    <header>
+      <h1 id="page-name">Weatherly</h1>
+      <form id="searchbar-form">
+        <div class="form-wrapper">
+          <label for="searchbox">
+            <input
+              type="text"
+              id="searchbox"
+              required
+              minlength="2"
+              maxlength="50"
+              placeholder="Search for a city..."
+              ;
+            />
+          </label>
+          <input type="submit" value="⌕" id="submit-button" />
+        </div>
+      </form>
+      <button id="theme-toggle">
+        <img src="3b028e3c5dd38aaedd88.svg" id="theme-icon" alt="toggle theme" />
+      </button>
+    </header>
+    <div class="weather-container">
+      <!--Weather content will be dynamically injected here-->
+    </div>
+  </body>
+</html>
