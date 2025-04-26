@@ -4,10 +4,12 @@ import moon from "./images/moon.svg";
 
 const form = document.querySelector("form");
 const city = document.getElementById("searchbox");
+const submitButton = document.getElementById("submit-button");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   city.blur();
+  submitButton.blur();
   localStorage.setItem("city", city.value);
   getWeather(city.value);
 });

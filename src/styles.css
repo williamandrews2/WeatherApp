@@ -16,16 +16,15 @@
     rgb(0, 204, 255)
   );
   --background-shade: rgba(0, 0, 0, 0.2);
-  --universal-width: 60%;
+  --universal-width: 70%;
   --section-margin: 20px 0px;
   --section-border-radius: 40px;
 }
 
 input:-webkit-autofill {
-  background-color: transparent !important;
-  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+  -webkit-box-shadow: 0 0 0px 1000px var(--background-shade) inset;
   -webkit-text-fill-color: white !important;
-  transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 9999s ease-in-out 0s; /* Prevent flash */
 }
 
 input::placeholder {
@@ -42,8 +41,8 @@ body {
 .dark {
   --background-color: linear-gradient(
     to bottom,
-    rgb(0, 0, 156),
-    rgb(1, 58, 145)
+    rgb(1, 1, 179),
+    rgb(0, 77, 192)
   );
 }
 
@@ -64,8 +63,9 @@ header {
 }
 
 #searchbar-form {
-  display: flex;
-  justify-content: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   padding: 20px 0px;
 }
 
@@ -137,7 +137,6 @@ header {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
-  gap: 10px;
   height: auto;
   width: 100%;
   padding-bottom: 20px;
@@ -163,7 +162,6 @@ header {
 
 .today-item.today-description {
   text-align: center;
-  width: 90%;
   padding: 0px 16px;
 }
 
@@ -198,4 +196,63 @@ header {
 
 .future-date {
   font-size: 1.3rem;
+}
+
+@media (max-width: 800px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  h2 {
+    font-size: 1.1rem;
+  }
+
+  header {
+    padding: 0px 20px;
+  }
+
+  #searchbar-form {
+    position: static;
+    left: unset;
+    transform: none;
+  }
+
+  .section-heading {
+    font-size: 1.3rem;
+  }
+  .main-section-container {
+    width: 90%;
+  }
+
+  .today-item.today-temp {
+    font-size: 6rem;
+  }
+
+  .today-item.today-description {
+    text-align: center;
+    width: 100%;
+    padding: 10px 10px;
+  }
+
+  .future-section {
+    flex-direction: column;
+    padding: 0px 30px 20px 30px;
+  }
+
+  .future-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0px;
+  }
+
+  .future-item img {
+    width: 15%;
+    height: auto;
+  }
+
+  .future-date,
+  .future-temps {
+    font-size: 1.3rem;
+  }
 }
