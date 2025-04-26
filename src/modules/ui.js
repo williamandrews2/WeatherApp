@@ -127,8 +127,9 @@ function getDayOfWeek(dateString) {
 function toggleTheme() {
   const root = document.documentElement;
   root.classList.toggle("dark");
-  isDay = !isDay;
-  themeIcon.src = isDay ? sun : moon;
+  const currentTheme = root.classList.contains("dark") ? "dark" : "";
+  localStorage.setItem("theme", currentTheme);
+  themeIcon.src = root.classList.contains("dark") ? moon : sun;
 }
 
 export default { renderWeather };
